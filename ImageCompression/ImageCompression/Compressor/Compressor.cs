@@ -9,7 +9,7 @@ public class Compressor
         var imageReader = new ImageCompression.ImageReader.ImageReader();
         var imageBytes = imageReader.ReadImageBytes(imagePath);
 
-        var encoder = new RunLengthEncoder();
+        var encoder = new Encoder();
         var compressedImage = encoder.RunLengthEncode(imageBytes);
 
         return new(compressedImage, imageBytes);

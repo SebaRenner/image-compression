@@ -8,7 +8,7 @@ public class RunLengthEncoderTest
     public void Test_RunLengthEncode()
     {
         // Arrange
-        var encode = new RunLengthEncoder();
+        var encode = new Encoder();
         var input = new byte[] { 65, 65, 66, 66, 65, 65, 65 };
 
         var expected = new byte[] { 2, 65, 2, 66, 3, 65 };

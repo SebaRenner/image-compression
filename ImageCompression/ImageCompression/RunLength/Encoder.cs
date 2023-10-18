@@ -1,6 +1,6 @@
 ﻿namespace ImageCompression.RunLength;
 
-public class RunLengthEncoder
+public class Encoder
 {
     public byte[] RunLengthEncode(byte[] image)
     {
