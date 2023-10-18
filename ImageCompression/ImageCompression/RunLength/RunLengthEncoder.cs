@@ -2,9 +2,9 @@
 
 public class RunLengthEncoder
 {
-    public string RunLengthEncode(byte[] image)
+    public byte[] RunLengthEncode(byte[] image)
     {
-        var code = string.Empty;
+        var encodedBytes = new List<byte>();
         var pointer = 0;
 
         while (pointer < image.Length)
@@ -18,11 +18,12 @@ public class RunLengthEncoder
                 count++;
             }
 
-            code += $"{count}{(char)image[pointer]}";
+            encodedBytes.Add((byte)count);
+            encodedBytes.Add(current);
 
             pointer++;
         }
 
-        return code;
+        return encodedBytes.ToArray();
     }
 }

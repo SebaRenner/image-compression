@@ -11,7 +11,7 @@ public class RunLengthEncoderTest
         var encode = new RunLengthEncoder();
         var input = new byte[] { 65, 65, 66, 66, 65, 65, 65 };
 
-        var expected = "2A2B3A";
+        var expected = new byte[] { 2, 65, 2, 66, 3, 65 };
 
         // Act
         var result = encode.RunLengthEncode(input);

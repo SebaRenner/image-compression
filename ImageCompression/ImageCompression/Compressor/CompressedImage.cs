@@ -1,3 +1,3 @@
 ﻿namespace ImageCompression.Compressor;
 
-public record CompressedImage(string compressedImage, byte[] originalImage);
+public record CompressedImage(byte[] compressedImage, byte[] originalImage);
