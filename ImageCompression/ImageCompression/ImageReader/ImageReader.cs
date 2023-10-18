@@ -1,5 +1,4 @@
 ﻿using System.Drawing;
-using System.IO;
 
 namespace ImageCompression.ImageReader;
 
@@ -14,7 +13,7 @@ public class ImageReader
             byte[] imageBytes;
             using (MemoryStream ms = new MemoryStream())
             {
-                bitmap.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+                bitmap.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
                 imageBytes = ms.ToArray();
             }
 

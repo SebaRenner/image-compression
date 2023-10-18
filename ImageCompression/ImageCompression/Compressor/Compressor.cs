@@ -4,7 +4,7 @@ namespace ImageCompression.Compressor;
 
 public class Compressor
 {   
-    public string CompressImage(string imagePath)
+    public CompressedImage CompressImage(string imagePath)
     {
         var imageReader = new ImageCompression.ImageReader.ImageReader();
         var imageBytes = imageReader.ReadImageBytes(imagePath);
@@ -12,6 +12,6 @@ public class Compressor
         var encoder = new RunLengthEncoder();
         var compressedImage = encoder.RunLengthEncode(imageBytes);
 
-        return compressedImage;
+        return new(compressedImage, imageBytes);
     }
 }

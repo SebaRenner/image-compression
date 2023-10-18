@@ -5,21 +5,22 @@ public class RunLengthEncoder
     public string RunLengthEncode(byte[] image)
     {
         var code = string.Empty;
-        while (image.Length > 0)
-        {
-            var pointer = 0;
-            var current = image[pointer];
+        var pointer = 0;
 
-            while (pointer < image.Length && current.Equals(image[pointer++]))
+        while (pointer < image.Length)
+        {
+            var current = image[pointer];
+            var count = 1;
+
+            while (pointer < image.Length - 1  && current.Equals(image[pointer + 1]))
             {
                 pointer++;
-                current = image[pointer];
+                count++;
             }
 
-            var combination = $"{pointer}{image[pointer]}";
-            code += combination;
+            code += $"{count}{(char)image[pointer]}";
 
-            image = image.Skip(pointer).ToArray();
+            pointer++;
         }
 
         return code;

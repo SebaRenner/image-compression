@@ -8,4 +8,8 @@ input = Console.ReadLine();
 var compressor = new Compressor();
 var compressedImage = compressor.CompressImage(input);
 
+var originalLength = compressedImage.originalImage.Length;
+var compressedLength =  compressedImage.compressedImage.Length;
 
+Console.WriteLine($"Original Image: {originalLength} bytes");
+Console.WriteLine($"Compressed Image: {compressedLength} bytes");
